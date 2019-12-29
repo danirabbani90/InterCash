@@ -1,0 +1,26 @@
+# /etc/conf.d/Intercashd: config file for /etc/init.d/Intercashd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/Intercash/Intercash.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/Intercashd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/Intercashd.pid"
+
+# Where to write Intercashd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/Intercashd"
+
+# User and group to own Intercashd process
+#BITCOIND_USER="Intercash"
+#BITCOIND_GROUP="Intercash"
+
+# Path to Intercashd executable
+#BITCOIND_BIN="/usr/bin/Intercashd"
+
+# Nice value to run Intercashd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

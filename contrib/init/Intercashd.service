@@ -1,0 +1,26 @@
+[Unit]
+Description=Intercash's distributed currency daemon
+After=network.target
+
+[Service]
+User=Intercash
+Group=Intercash
+
+Type=forking
+PIDFile=/var/lib/Intercashd/Intercashd.pid
+
+ExecStart=/usr/bin/Intercashd -daemon -pid=/var/lib/Intercashd/Intercashd.pid \
+          -conf=/etc/Intercash/Intercash.conf -datadir=/var/lib/Intercashd
+
+ExecStop=-/usr/bin/Intercash-cli -conf=/etc/Intercash/Intercash.conf \
+         -datadir=/var/lib/Intercashd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
